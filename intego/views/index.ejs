@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="imageContainer"></div>
+      <div class="content">
+        <div class="statusContainer">
+          <div class="stepperWrapper">
+            <div class="stepperItem completed">
+              <div class="stepCounter">1</div>
+              <div class="stepName">Registration</div>
+            </div>
+            <div class=<%= success ? "stepperItem completed" : "stepperItem" %> >
+              <div class="stepCounter">2</div>
+              <div class="stepName">Finish</div>
+            </div>
+          </div>
+        </div>
+        <div class="formContainer">
+          <% if (!success) { %>
+          <div class="title">
+            <h2 id="logo">Intego</h2>
+            <h1>Welcome to intego B2B console</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              delectus voluptates voluptatibus non odit numquam, modi corporis
+              maiores, sapiente, corrupti harum.
+            </p>
+          </div>
+          <form id="registration" class="form" action="register" method="POST">
+            <div class="inputContainer">
+              <label for="email">Admin Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="john.doe@gmail.com"
+                required
+                value="<%= email %>"
+                class=<%= emailError ? "error" : "" %>
+              />
+              <span class="warn"><%= emailError ? emailError : "" %></span>
+            </div>
+            <div class="inputContainer">
+              <label for="name">Admin Name</label>
+              <input
+                value="<%=name%>"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div class="inputContainer">
+              <label for="company">Company Name</label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                placeholder="Company Name"
+                required
+                value="<%= company %>"
+              />
+            </div>
+            <div class="inputContainer">
+              <label for="password">Admin Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                required
+                value="<%=pswd %>"
+              />
+              <i class="bi bi-eye-slash" id="togglePassword"></i>
+            </div>
+          </form>
+          <% } else { %>
+            <div class="title">
+              <h2 id="logo">Intego</h2>
+            </div>
+            <div class="checkmarkContainer">
+              <i class="bi bi-check-circle"></i>
+            </div>
+            <div class="textContainer">
+              <h1>Registration complete!</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                delectus voluptates voluptatibus non odit numquam, modi corporis
+                maiores, sapiente, corrupti harum.
+              </p>
+            </div>
+            <div class="btnsContainer">
+              <button class="btn inverse">Go to dashboard</button>
+              <button class="btn">Enroll devices</button>
+            </div>
+          <% } %>
+        </div>
+        <div class="buttonContainer">
+          <% if (!success) { %>
+          <button id="submit" class="btn" form="registration">Next</button>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

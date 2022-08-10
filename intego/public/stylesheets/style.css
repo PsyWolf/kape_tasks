@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: "Mulish", sans-serif;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.imageContainer {
+  flex: 1;
+  height: 100%;
+  background-color: blue;
+}
+
+.content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.statusContainer {
+  display: flex;
+  width: 80%;
+  flex: 1;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepperWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stepperItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stepperItem::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #c3c3c3;
+  width: 200%;
+  top: 20px;
+  z-index: 2;
+}
+
+.stepperItem.completed::before {
+  border-bottom: 2px solid #172354;
+  z-index: 3;
+}
+
+.stepperItem .stepCounter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 6px;
+  color: #c3c3c3;
+  border: 2px solid #c3c3c3;
+}
+
+.stepperItem .stepName {
+  color: #c3c3c3;
+}
+
+.stepperItem.completed .stepName {
+  color: #172354;
+}
+
+.stepperItem.completed .stepCounter {
+  color: #172354;
+  border: 2px solid #172354;
+}
+
+.stepperItem:first-child {
+  align-items: flex-start;
+}
+.stepperItem:first-child::before {
+  content: none;
+}
+.stepperItem:last-child {
+  align-items: flex-end;
+}
+.stepperItem:last-child::after {
+  content: none;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  flex: 2;
+  background-color: white;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 80%;
+  flex: 1;
+  background-color: white;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  outline: none;
+  border: none;
+
+  font-weight: bold;
+  border-radius: 40px;
+  color: #ffffff;
+  background-color: #161963;
+  border: 1px solid #161963;
+}
+
+.btn.inverse {
+  color: #161963;
+  background-color: #ffffff;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+#logo {
+  color: #2b79b3;
+  margin-bottom: 1.5em;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 2.5em;
+}
+
+.textContainer h1,
+.title h1 {
+  color: #172354;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+.textContainer p,
+.title p {
+  color: #172354;
+  line-height: 1.2;
+}
+
+.textContainer h1 {
+  margin-bottom: 2.5em;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  align-items: flex-start;
+  margin-bottom: 2.5em;
+}
+
+.inputContainer label {
+  color: #172354;
+  width: 100%;
+  margin: 0.5em;
+  font-weight: bold;
+}
+
+.inputContainer input {
+  width: 100%;
+  appearance: none;
+  border: 1px solid #161963;
+  line-height: 0;
+  font-size: 17px;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #161963;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+form i {
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 10px;
+  top: 58%;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.warn {
+  color: red;
+  position: absolute;
+  bottom: -25px;
+}
+
+.error {
+  border-color: red !important;
+}
+
+.checkmarkContainer,
+.textContainer,
+.btnsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2.5em;
+}
+
+.checkmarkContainer i {
+  font-size: 8em;
+  color: #38d694;
+}
+
+.btnsContainer {
+  flex-direction: row;
+  justify-content: space-around;
+}
